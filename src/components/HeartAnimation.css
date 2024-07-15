@@ -1,0 +1,46 @@
+.heart-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  .heart {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    animation: float 5s infinite;
+  }
+  
+  .heart::before, .heart::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: pink;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .heart::before {
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  
+  .heart::after {
+    transform: rotate(45deg);
+    transform-origin: 100% 0;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.2);
+    }
+  }
+  
